@@ -20,7 +20,6 @@ public class Drive : MonoBehaviour
     public float rotationSpeed = 100.0f;
     public float bulletSpeed;
     public float turretRotateSpd=30.0f;
-    public float y=0;
 
     void Start()
     {
@@ -58,10 +57,16 @@ public class Drive : MonoBehaviour
 
     void Shoot()
     {
-        if(canShoot)
-        {
+        if(canShoot){
             GameObject flash=Instantiate(muzzleFlash,barrel.position,barrel.rotation);
-            Instantiate(shell,barrel.position,barrel.rotation);
+            //GET BULLET FROM OBPOOL CODE
+            GameObject shell = ObjectPooler.poolerInstance.GetObjectFromPool();
+            shell.transform.position=barrel.position;
+            shell.transform.rotation=barrel.rotation;
+            shell.GetComponent<Rigidbody>().velocity=shell.transform.forward*bulletSpeed;
+            shell.GetComponent<Rigidbody>().angularVelocity=Vector3.zero;
+            shell.SetActive(true); 
+            //GET BULLET FROM OBPOOL CODE   
             Destroy(flash,0.2f);
             canShoot=false;
             StartCoroutine(BeginCooldown());
@@ -82,7 +87,7 @@ public class Drive : MonoBehaviour
         {
             float root=Mathf.Sqrt(underTheSqrRoot);
             float lowAngle=Mathf.Atan2(speedSqr-root,gravity*x)*Mathf.Rad2Deg;
-            if(lowAngle<maxTurretRot){
+            if(lowAngle<maxTurretRot && lowAngle>-5){
                 return lowAngle;
             } else{
                 return null;
@@ -94,14 +99,14 @@ public class Drive : MonoBehaviour
 
     void RotateTurret()
     {
-        //rotate the turret to face the pointer independent from the tracks
         Vector3 direction=pointer.transform.position-transform.position;
-        Quaternion lookRotation=Quaternion.LookRotation(new Vector3(direction.x,0, direction.z))*Quaternion.Euler(turret.eulerAngles.x,0,0);
+        direction.y=direction.magnitude*Mathf.Tan(-turret.eulerAngles.x*Mathf.Deg2Rad);
+        Quaternion lookRotation=Quaternion.LookRotation(direction);
         turret.rotation=Quaternion.RotateTowards(turret.transform.rotation, lookRotation, Time.deltaTime*turretRotateSpd);
 
         //vertically rotate the barrel
         float? angle=CalculateAngle();
-        if(angle!=null && angle>-5){
+        if(angle!=null){
             turret.rotation=Quaternion.Euler(360-(float)angle,turret.eulerAngles.y,0);
         }
     }

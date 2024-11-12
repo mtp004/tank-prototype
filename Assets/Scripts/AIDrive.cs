@@ -68,7 +68,7 @@ public class AIDrive : MonoBehaviour
     {
         Vector3 targetDir=player.transform.position-transform.position;
         float y=targetDir.y-1;
-        targetDir.y=0f;
+        targetDir.y=0;
         float x=targetDir.magnitude;
         float gravity=9.8f;
         float speedSqr=bulletSpeed*bulletSpeed;
@@ -77,7 +77,7 @@ public class AIDrive : MonoBehaviour
         {
             float root=Mathf.Sqrt(underTheSqrRoot);
             float lowAngle=Mathf.Atan2(speedSqr-root,gravity*x)*Mathf.Rad2Deg;
-            if(lowAngle<maxTurretRot){
+            if(lowAngle<maxTurretRot || lowAngle>-5){
                 return lowAngle;
             } else{
                 return null;
@@ -91,7 +91,8 @@ public class AIDrive : MonoBehaviour
     {
         //rotate the turret horizontally
         Vector3 direction=player.transform.position-transform.position;
-        Quaternion lookRotation=Quaternion.LookRotation(direction)*Quaternion.Euler(turret.eulerAngles.x,0,0);
+        direction.y=direction.magnitude*Mathf.Tan(-turret.eulerAngles.x*Mathf.Deg2Rad);
+        Quaternion lookRotation=Quaternion.LookRotation(direction);
         turret.rotation=Quaternion.RotateTowards(turret.rotation, lookRotation, turretRotateSpd*Time.deltaTime);
 
         //vertically rotate the turret
