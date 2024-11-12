@@ -58,7 +58,6 @@
     <Compile Include="Assets/Scripts/CameraPivot.cs" />
     <Compile Include="Assets/Scripts/AIDrive.cs" />
     <Compile Include="Assets/Scripts/Drive_backup.cs" />
-    <Compile Include="Assets/Scripts/DestroyShell.cs" />
     <Compile Include="Assets/Scripts/PooledObject.cs" />
     <Compile Include="Assets/Scripts/Shell.cs" />
     <Compile Include="Assets/Scripts/ObjectPooler.cs" />

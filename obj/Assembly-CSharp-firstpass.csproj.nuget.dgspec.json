@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tripham/Desktop/Unity Projects/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj": {}
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj": {}
   },
   "projects": {
-    "/Users/tripham/Desktop/Unity Projects/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj": {
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tripham/Desktop/Unity Projects/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
         "projectName": "Assembly-CSharp-firstpass",
-        "projectPath": "/Users/tripham/Desktop/Unity Projects/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
         "packagesPath": "/Users/tripham/.nuget/packages/",
-        "outputPath": "/Users/tripham/Desktop/Unity Projects/AI Projects/AI Tank prototype/obj/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tripham/.nuget/NuGet/NuGet.Config"
