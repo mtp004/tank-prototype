@@ -28,12 +28,15 @@ public class AIDrive : MonoBehaviour
     public float turretRotateSpd=25.0f;
     public float circlingMaxDis=15.0f;
     public float circlingMinDis=20.0f;
+    private Transform tankTransform;
 
 
-    void Start()
+    void Awake()
     {
         turret.rotation=Quaternion.Euler(-30,0,0);
         bulletSpeed=shell.GetComponent<Shell>().speed;
+        tankTransform=gameObject.GetComponent<Transform>();
+        
     }
 
     void LateUpdate(){
@@ -77,7 +80,7 @@ public class AIDrive : MonoBehaviour
 
     float? CalculateAngle()
     {
-        Vector3 targetDir=player.transform.position-transform.position;
+        Vector3 targetDir=player.transform.position-tankTransform.position;
         float y=targetDir.y-1;
         targetDir.y=0;
         float x=targetDir.magnitude;
@@ -101,7 +104,7 @@ public class AIDrive : MonoBehaviour
     void RotateTurret()
     {
         //rotate the turret horizontally
-        Vector3 direction=player.transform.position-transform.position;
+        Vector3 direction=player.transform.position-tankTransform.position;
         direction.y=direction.magnitude*Mathf.Tan(-turret.eulerAngles.x*Mathf.Deg2Rad);
         Quaternion lookRotation=Quaternion.LookRotation(direction);
         turret.rotation=Quaternion.RotateTowards(turret.rotation, lookRotation, turretRotateSpd*Time.deltaTime);
@@ -114,7 +117,7 @@ public class AIDrive : MonoBehaviour
     }
 
     void MaintainDistance(){
-        Vector3 playerDirection=player.transform.position-transform.position;
+        Vector3 playerDirection=player.transform.position-tankTransform.position;
         Quaternion targetRotation=transform.rotation;
         
         if(playerDirection.magnitude>circlingMaxDis){
@@ -126,7 +129,7 @@ public class AIDrive : MonoBehaviour
         } else{
             //case to circle the player if the distance is in the preferable range
             Vector3 leftCross=Vector3.Cross(playerDirection, Vector3.up);
-            float crossAngle=Vector3.Angle(leftCross, transform.forward);
+            float crossAngle=Vector3.Angle(leftCross, tankTransform.forward);
             if(crossAngle<=90)
             {
                 targetRotation= Quaternion.LookRotation(leftCross);
@@ -135,8 +138,8 @@ public class AIDrive : MonoBehaviour
                 targetRotation = Quaternion.LookRotation(-leftCross);
             }
         }
-        transform.rotation=Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed*Time.deltaTime);
-        transform.Translate(Vector3.forward*Time.deltaTime*speed);
+        tankTransform.rotation=Quaternion.RotateTowards(tankTransform.rotation, targetRotation, rotationSpeed*Time.deltaTime);
+        tankTransform.Translate(Vector3.forward*Time.deltaTime*speed);
     } 
 
     private void OnCollisionEnter(Collision collision){
