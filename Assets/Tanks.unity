@@ -535,14 +535,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 1043457633746962670, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1043457633746962670, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
-      propertyPath: m_TagString
-      value: Tank
-      objectReference: {fileID: 0}
     - target: {fileID: 4044306032032135933, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.442079
@@ -587,18 +579,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2073883643}
-    - target: {fileID: 4588490459879950777, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
-      propertyPath: muzzleFlash
-      value: 
-      objectReference: {fileID: 7809936932695745330, guid: fbcf7180dce9e4c4bb2915a49e13c530, type: 3}
-    - target: {fileID: 7616264765894689486, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4638524
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616264765894689486, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
-      propertyPath: m_Center.y
-      value: 0.77192616
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -717,10 +697,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
-    - target: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-      propertyPath: m_TagString
-      value: Tank
-      objectReference: {fileID: 0}
     - target: {fileID: 2887154942990734001, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.61
@@ -760,26 +736,6 @@ PrefabInstance:
     - target: {fileID: 2887154942990734001, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6880403096463785013, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.96587706
-      objectReference: {fileID: 0}
-    - target: {fileID: 6880403096463785013, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.25880593
-      objectReference: {fileID: 0}
-    - target: {fileID: 6880403096463785013, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.009710365
-      objectReference: {fileID: 0}
-    - target: {fileID: 6880403096463785013, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.002601884
-      objectReference: {fileID: 0}
-    - target: {fileID: 6880403096463785013, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -56,8 +56,17 @@ public class AIDrive : MonoBehaviour
     {
         if(canShoot)
         {
-            Instantiate(shell,barrel.position,barrel.rotation);
+            //Instantiate(shell,barrel.position,barrel.rotation);  BACKUP
             GameObject flash=Instantiate(muzzleFlash,barrel.position,barrel.rotation);
+
+            //Get shell object from Object Pooler
+            GameObject shell = ObjectPooler.poolerInstance.GetObjectFromPool();
+            shell.transform.position=barrel.position;
+            shell.transform.rotation=barrel.rotation;
+            shell.GetComponent<Rigidbody>().velocity=shell.transform.forward*bulletSpeed;
+            shell.GetComponent<Rigidbody>().angularVelocity=Vector3.zero;
+            shell.SetActive(true); 
+
             Destroy(flash,0.2f);
             canShoot=false;
             StartCoroutine(BeginCooldown());
