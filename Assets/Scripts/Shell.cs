@@ -21,20 +21,14 @@ public class Shell : MonoBehaviour
     {
         GameObject shockwave=Instantiate(explosion, gameObject.transform.position, transform.rotation);
         Destroy(shockwave, 0.5f);
-        //SHELL RELEASE TO OBPOOL CODE
+        //SHELL DEACTIVATION CODE
 
         ObjectPooler.poolerInstance.ReleaseObject(gameObject);
 
-        //SHELL RELEASE TO OBPOOL CODE
-        //Destroy(gameObject);           BACKUP
+        //SHELL DEACTIVATION  CODE
     }
     void Update()
     {
         this.transform.forward=rb.velocity.normalized;
-    }
-
-    public void AddForce(){
-        rb=gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward*speed,ForceMode.Impulse);
     }
 }

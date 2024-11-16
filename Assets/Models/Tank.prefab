@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6905900604839569639}
   m_Layer: 6
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,6 @@ MonoBehaviour:
   rotationSpeed: 70
   bulletSpeed: 0
   turretRotateSpd: 70
-  y: 0
 --- !u!65 &6905900604839569639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -394,14 +393,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6027507690873376459}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.010054856, z: -0, w: 0.99994946}
+  m_LocalRotation: {x: -0.25880593, y: 0.009710365, z: 0.002601884, w: 0.96587706}
   m_LocalPosition: {x: 0.0011332073, y: 1.008, z: -0.025334839}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8743802053608633598}
   m_Father: {fileID: 6938391260596658440}
-  m_LocalEulerAnglesHint: {x: 0, y: 1.152, z: 0}
+  m_LocalEulerAnglesHint: {x: -30, y: 1.152, z: 0}
 --- !u!33 &8793404300833214937
 MeshFilter:
   m_ObjectHideFlags: 0

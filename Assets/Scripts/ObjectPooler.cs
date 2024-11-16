@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    public short poolSize=20;
+    public short poolSize;
     //drag the object to pool in the game menu to this slot
     public GameObject ObjectToPool;
     public static ObjectPooler poolerInstance;
@@ -23,11 +23,17 @@ public class ObjectPooler : MonoBehaviour
     }
 
     void Start(){
+        //tag is hardcoded but i will change that later
+        poolSize=(short)(4*GetPooledObjectUserCount("Tank"));
         poolIndex=0;
-        createPool();
+        InitializePool();
     }
 
-    private void createPool(){
+    private int GetPooledObjectUserCount(string tag){
+        return GameObject.FindGameObjectsWithTag(tag).Length;
+    }
+    
+    private void InitializePool(){
         pools=new GameObject[poolSize];
         GameObject tmp;
         for(short i=0; i<poolSize; i++){
@@ -49,23 +55,24 @@ public class ObjectPooler : MonoBehaviour
     }
 
     public void ReleaseObject(GameObject gameObject){
-        if(poolIndex!=0){
-        PooledObject pooledObject=gameObject.GetComponent<PooledObject>();
-        GameObject tmp=pools[poolIndex-1];
-        PooledObject lastPooledObject=tmp.GetComponent<PooledObject>();
-        short objectIndex=pooledObject.PoolIndex;
-        short lastIndex=lastPooledObject.PoolIndex;
+        GameObject latestActive=pools[poolIndex-1];
 
-        //swap their indices
-        pooledObject.PoolIndex=lastIndex;
-        lastPooledObject.PoolIndex=objectIndex;
+        //getting release and lastest active object index in pool by getting their component
+        PooledObject releaseComponent=gameObject.GetComponent<PooledObject>();
+        PooledObject activeComponent=latestActive.GetComponent<PooledObject>();
+        short releaseIndex=releaseComponent.PoolIndex;
+        short activeIndex=activeComponent.PoolIndex;
+
+        //swap their index component value before swapping them in the array
+        releaseComponent.PoolIndex=activeIndex;
+        activeComponent.PoolIndex=releaseIndex;
 
         //switch their place in the pool
-        pools[poolIndex-1]=gameObject;
-        pools[objectIndex]=tmp;
+        pools[activeIndex]=gameObject;
+        pools[releaseIndex]=latestActive;
+
         gameObject.SetActive(false);
         poolIndex--;
-        }
     }
     
     

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {}
+    ".NETStandard,Version=v2.1": {
+      "Assembly-CSharp-firstpass/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Assembly-CSharp-firstpass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assembly-CSharp-firstpass.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Assembly-CSharp-firstpass/1.0.0": {
+      "type": "project",
+      "path": "Assembly-CSharp-firstpass.csproj",
+      "msbuildProject": "Assembly-CSharp-firstpass.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": []
+    ".NETStandard,Version=v2.1": [
+      "Assembly-CSharp-firstpass >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/tripham/.nuget/packages/": {}
@@ -13,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
-      "projectName": "Assembly-CSharp-firstpass",
-      "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
+      "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp.csproj",
+      "projectName": "Assembly-CSharp",
+      "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp.csproj",
       "packagesPath": "/Users/tripham/.nuget/packages/",
       "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
       "projectStyle": "PackageReference",
@@ -31,7 +50,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj": {
+              "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

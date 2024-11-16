@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - PoolerIndex
+  - Tank
   layers:
   - Default
   - TransparentFX

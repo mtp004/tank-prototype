@@ -44,11 +44,11 @@ GameObject:
   - component: {fileID: 4588490459879950777}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4044306032032135933
 Transform:
   m_ObjectHideFlags: 0
@@ -84,8 +84,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6077774, y: 1.6600001, z: 1.5987716}
-  m_Center: {x: 0.017949402, y: 0.87, z: -0.014629483}
+  m_Size: {x: 1.6077774, y: 1.4638524, z: 1.5987716}
+  m_Center: {x: 0.017949402, y: 0.77192616, z: -0.014629483}
 --- !u!114 &4588490459879950777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b09594d748b3469a95837f3f699738b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzleFlash: {fileID: 7809936932695745330, guid: fbcf7180dce9e4c4bb2915a49e13c530, type: 3}
   player: {fileID: 0}
   barrel: {fileID: 469073228681290658}
   canShoot: 1
