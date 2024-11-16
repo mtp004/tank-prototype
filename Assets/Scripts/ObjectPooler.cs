@@ -20,9 +20,7 @@ public class ObjectPooler : MonoBehaviour
         if(poolerInstance==null){
             poolerInstance=this;
         }
-    }
 
-    void Start(){
         //tag is hardcoded but i will change that later
         poolSize=(short)(4*GetPooledObjectUserCount("Tank"));
         poolIndex=0;

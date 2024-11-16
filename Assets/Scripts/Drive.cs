@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Drive : MonoBehaviour
 {
+    private int health=100;
     public GameObject muzzleFlash;
     public GameObject pointer;
     public Transform barrel;
@@ -20,11 +21,12 @@ public class Drive : MonoBehaviour
     public float rotationSpeed = 100.0f;
     public float bulletSpeed;
     public float turretRotateSpd=30.0f;
-
-    void Start()
-    {
+    private Transform tankTransform;
+    void Awake(){
+        tankTransform = GetComponent<Transform>();
         bulletSpeed=shell.GetComponent<Shell>().speed;
     }
+    
     void Update()
     {
         RotateTurret();
@@ -39,10 +41,10 @@ public class Drive : MonoBehaviour
         rotation *= Time.deltaTime;
 
         // Move translation along the object's z-axis
-        transform.Translate(0, 0, translation);
+        tankTransform.Translate(0, 0, translation);
 
         // Rotate around our y-axis
-        transform.Rotate(0, rotation, 0);
+        tankTransform.Rotate(0, rotation, 0);
          if(Input.GetMouseButtonDown(0))
         {
             Shoot();
@@ -75,7 +77,7 @@ public class Drive : MonoBehaviour
 
     float? CalculateAngle()
     {
-        Vector3 targetDir=pointer.transform.position-transform.position;
+        Vector3 targetDir=pointer.transform.position-tankTransform.position;
         float y=targetDir.y-1;
         targetDir.y=0f;
         float x=targetDir.magnitude;
@@ -99,7 +101,7 @@ public class Drive : MonoBehaviour
 
     void RotateTurret()
     {
-        Vector3 direction=pointer.transform.position-transform.position;
+        Vector3 direction=pointer.transform.position-tankTransform.position;
         direction.y=direction.magnitude*Mathf.Tan(-turret.eulerAngles.x*Mathf.Deg2Rad);
         Quaternion lookRotation=Quaternion.LookRotation(direction);
         turret.rotation=Quaternion.RotateTowards(turret.transform.rotation, lookRotation, Time.deltaTime*turretRotateSpd);
@@ -108,6 +110,17 @@ public class Drive : MonoBehaviour
         float? angle=CalculateAngle();
         if(angle!=null){
             turret.rotation=Quaternion.Euler(360-(float)angle,turret.eulerAngles.y,0);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision){
+        if(collision.collider.CompareTag("ATProjectile")){
+            health-=25;
+            if(health==0){
+                //Insert code for when out of health here
+                gameObject.SetActive(false);
+                //Insert code for when out of health here
+            }
         }
     }
 }

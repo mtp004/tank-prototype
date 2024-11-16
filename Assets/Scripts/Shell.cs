@@ -10,7 +10,7 @@ public class Shell : MonoBehaviour
     public GameObject explosion;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb=gameObject.GetComponent<Rigidbody>();
     }
@@ -19,7 +19,6 @@ public class Shell : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) 
     {
-        if(collision.gameObject.tag=="Tank") Destroy(collision.gameObject);
         GameObject shockwave=Instantiate(explosion, gameObject.transform.position, transform.rotation);
         Destroy(shockwave, 0.5f);
         //SHELL DEACTIVATION CODE

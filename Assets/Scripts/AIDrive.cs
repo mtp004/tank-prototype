@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Sirenix.Serialization;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -11,6 +12,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class AIDrive : MonoBehaviour
 {
+    private int health=100;
     public GameObject muzzleFlash;
     public GameObject player;
     public Transform barrel;
@@ -136,5 +138,17 @@ public class AIDrive : MonoBehaviour
         transform.rotation=Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed*Time.deltaTime);
         transform.Translate(Vector3.forward*Time.deltaTime*speed);
     } 
+
+    private void OnCollisionEnter(Collision collision){
+        if(collision.collider.CompareTag("ATProjectile")){
+            health-=25;
+            if(health==0){
+                //Insert code for when out of health here
+                gameObject.SetActive(false);
+                //Insert code for when out of health here
+            }
+        }
+    }
 }
+
 
