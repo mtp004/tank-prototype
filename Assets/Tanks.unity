@@ -468,6 +468,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &1199779385 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4393498671636604874, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
+  m_PrefabInstance: {fileID: 1547837238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349126758
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +624,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1939787020}
+    - target: {fileID: 4588490459879950777, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1839600557}
+    - target: {fileID: 4588490459879950777, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
+      propertyPath: healthBarContainer
+      value: 
+      objectReference: {fileID: 1199779385}
     - target: {fileID: 7726550142365957251, guid: 34dcdf77b8a0c4e17bba8f1290508685, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

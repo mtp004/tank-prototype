@@ -31,7 +31,7 @@ public class AIDrive : MonoBehaviour
     public float circlingMinDis=20.0f;
     private Transform tankTransform;
     public Slider healthBar;
-
+    public Camera playerCamera;
     void Awake()
     {
         turret.rotation=Quaternion.Euler(-30,0,0);
@@ -49,6 +49,9 @@ public class AIDrive : MonoBehaviour
         // check if the bullet can reach the player or not
         MaintainDistance();
         RotateTurret();
+
+        //rotate healthbar to always face player
+        HealthBarToCamera();
     }
 
     public IEnumerator BeginCooldown()
@@ -154,7 +157,15 @@ public class AIDrive : MonoBehaviour
         }
     }
 
+    //---------------------------
+    //HEALTHBAR UI IMPLEMENTATION
 
+    void HealthBarToCamera(){
+        healthBar.transform.LookAt(playerCamera.transform);
+    }
+    
+    //HEALTHBAR UI IMPLEMENTATION
+    //---------------------------
 }
 
 
