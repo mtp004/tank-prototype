@@ -9,6 +9,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using UnityEngine.UI;
 
 public class AIDrive : MonoBehaviour
 {
@@ -29,14 +30,13 @@ public class AIDrive : MonoBehaviour
     public float circlingMaxDis=15.0f;
     public float circlingMinDis=20.0f;
     private Transform tankTransform;
-
+    public Slider healthBar;
 
     void Awake()
     {
         turret.rotation=Quaternion.Euler(-30,0,0);
         bulletSpeed=shell.GetComponent<Shell>().speed;
         tankTransform=gameObject.GetComponent<Transform>();
-        
     }
 
     void LateUpdate(){
@@ -145,6 +145,7 @@ public class AIDrive : MonoBehaviour
     private void OnCollisionEnter(Collision collision){
         if(collision.collider.CompareTag("ATProjectile")){
             health-=25;
+            healthBar.value=(float)health/100;
             if(health==0){
                 //Insert code for when out of health here
                 gameObject.SetActive(false);
@@ -152,6 +153,8 @@ public class AIDrive : MonoBehaviour
             }
         }
     }
+
+
 }
 
 
