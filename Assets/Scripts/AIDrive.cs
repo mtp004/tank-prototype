@@ -30,8 +30,9 @@ public class AIDrive : MonoBehaviour
     public float circlingMaxDis=15.0f;
     public float circlingMinDis=20.0f;
     private Transform tankTransform;
+    public GameObject healthBarContainer;
     public Slider healthBar;
-    public Camera playerCamera;
+    private Coroutine renderHealthBar;
     void Awake()
     {
         turret.rotation=Quaternion.Euler(-30,0,0);
@@ -49,9 +50,6 @@ public class AIDrive : MonoBehaviour
         // check if the bullet can reach the player or not
         MaintainDistance();
         RotateTurret();
-
-        //rotate healthbar to always face player
-        HealthBarToCamera();
     }
 
     public IEnumerator BeginCooldown()
@@ -147,23 +145,36 @@ public class AIDrive : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision){
         if(collision.collider.CompareTag("ATProjectile")){
+            //reset health bar UI render countdown
+            if(renderHealthBar!=null){
+                StopCoroutine(renderHealthBar);
+                renderHealthBar=null;
+            }
+            
             health-=25;
             healthBar.value=(float)health/100;
             if(health==0){
                 //Insert code for when out of health here
                 gameObject.SetActive(false);
                 //Insert code for when out of health here
+                return;
             }
+
+            //Render health bar and restart render timer
+            renderHealthBar=StartCoroutine(RenderHealthBarTimed());
         }
     }
 
     //---------------------------
     //HEALTHBAR UI IMPLEMENTATION
 
-    void HealthBarToCamera(){
-        healthBar.transform.LookAt(playerCamera.transform);
+    private IEnumerator RenderHealthBarTimed(){
+        healthBarContainer.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        healthBarContainer.SetActive(false);
+        renderHealthBar=null;
     }
-    
+
     //HEALTHBAR UI IMPLEMENTATION
     //---------------------------
 }
