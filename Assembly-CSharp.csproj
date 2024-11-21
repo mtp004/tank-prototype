@@ -58,10 +58,10 @@
     <Compile Include="Assets/Scripts/AIDrive.cs" />
     <Compile Include="Assets/Scripts/HealthBarUI.cs" />
     <Compile Include="Assets/Scripts/Drive_backup.cs" />
+    <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/FollowTank.cs" />
     <Compile Include="Assets/Scripts/PooledObject.cs" />
     <Compile Include="Assets/Scripts/Shell.cs" />
-    <Compile Include="Assets/Scripts/ObjectPooler.cs" />
     <Compile Include="Assets/Scripts/Drive.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -40,6 +40,10 @@ public class AIDrive : MonoBehaviour
         tankTransform=gameObject.GetComponent<Transform>();
     }
 
+    void Start(){
+        player=GameManager.manager.activePlayer; 
+    }
+
     void LateUpdate(){
         if(canShoot){
             Shoot();
@@ -66,7 +70,7 @@ public class AIDrive : MonoBehaviour
             GameObject flash=Instantiate(muzzleFlash,barrel.position,barrel.rotation);
 
             //Get shell object from Object Pooler
-            GameObject shell = ObjectPooler.poolerInstance.GetObjectFromPool();
+            GameObject shell = GameManager.manager.GetObjectFromPool();
             shell.transform.position=barrel.position;
             shell.transform.rotation=barrel.rotation;
             shell.GetComponent<Rigidbody>().velocity=shell.transform.forward*bulletSpeed;

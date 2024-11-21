@@ -372,8 +372,8 @@
 "Assets/Scripts/Drive.cs"
 "Assets/Scripts/Drive_backup.cs"
 "Assets/Scripts/FollowTank.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/HealthBarUI.cs"
-"Assets/Scripts/ObjectPooler.cs"
 "Assets/Scripts/PooledObject.cs"
 "Assets/Scripts/Shell.cs"
 -langversion:9.0

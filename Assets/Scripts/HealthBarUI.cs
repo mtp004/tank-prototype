@@ -13,12 +13,13 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    public Camera playerCamera;
+    public Camera activeCamera;
     private Transform HBtransform;
 
     void Awake()
     {
         HBtransform=gameObject.GetComponent<Transform>();
+        activeCamera=GameManager.manager.activeCamera;
     }
 
     // Update is called once per frame
@@ -28,6 +29,6 @@ public class HealthBarUI : MonoBehaviour
     }
 
     void HealthBarToCamera(){
-        HBtransform.LookAt(playerCamera.transform);
+        HBtransform.LookAt(activeCamera.transform);
     }
 }

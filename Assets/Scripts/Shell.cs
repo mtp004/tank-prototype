@@ -24,7 +24,7 @@ public class Shell : MonoBehaviour
         Destroy(shockwave, 0.5f);
         //SHELL DEACTIVATION CODE
 
-        ObjectPooler.poolerInstance.ReleaseObject(gameObject);
+        GameManager.manager.ReleaseObject(gameObject);
 
         //SHELL DEACTIVATION  CODE
     }

@@ -62,7 +62,7 @@ public class Drive : MonoBehaviour
         if(canShoot){
             GameObject flash=Instantiate(muzzleFlash,barrel.position,barrel.rotation);
             //GET BULLET FROM OBPOOL CODE
-            GameObject shell = ObjectPooler.poolerInstance.GetObjectFromPool();
+            GameObject shell = GameManager.manager.GetObjectFromPool();
             shell.transform.position=barrel.position;
             shell.transform.rotation=barrel.rotation;
             shell.GetComponent<Rigidbody>().velocity=shell.transform.forward*bulletSpeed;
