@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1bRiYDPuEZ7WHHGP3BskT8TgSLlTZNCC5q2zIwFTir2YH7z5T6fcP/mJztLmwgPZyVeEdEuUvxWgjgsm7Q8NGw==",
+  "dgSpecHash": "OTOVwtegLXEDfOgvtloIoIYMEoSpE+DLJmBBXHj0QkSyTKHgqwmZRoTQ5wlpMHqbtja1uQLzjnOCeUVEupYA4A==",
   "success": true,
-  "projectFilePath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp.csproj",
+  "projectFilePath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Assembly-CSharp-firstpass.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

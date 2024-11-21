@@ -369,9 +369,12 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.12f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.12f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/AIDrive.cs"
-"Assets/Scripts/CameraPivot.cs"
-"Assets/Scripts/DestroyShell.cs"
 "Assets/Scripts/Drive.cs"
+"Assets/Scripts/Drive_backup.cs"
+"Assets/Scripts/FollowTank.cs"
+"Assets/Scripts/GameManager.cs"
+"Assets/Scripts/HealthBarUI.cs"
+"Assets/Scripts/PooledObject.cs"
 "Assets/Scripts/Shell.cs"
 -langversion:9.0
 

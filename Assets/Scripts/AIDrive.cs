@@ -44,16 +44,14 @@ public class AIDrive : MonoBehaviour
         player=GameManager.manager.activePlayer; 
     }
 
-    void LateUpdate(){
-        if(canShoot){
-            Shoot();
-        }
-    }
     void Update()
     {
         // check if the bullet can reach the player or not
         MaintainDistance();
         RotateTurret();
+        if(canShoot){
+            Shoot();
+        }
     }
 
     public IEnumerator BeginCooldown()
@@ -64,23 +62,20 @@ public class AIDrive : MonoBehaviour
 
     void Shoot()
     {
-        if(canShoot)
-        {
-            //Instantiate(shell,barrel.position,barrel.rotation);  BACKUP
-            GameObject flash=Instantiate(muzzleFlash,barrel.position,barrel.rotation);
+        //Instantiate(shell,barrel.position,barrel.rotation);  BACKUP
+        GameObject flash=Instantiate(muzzleFlash,barrel.position,barrel.rotation);
 
-            //Get shell object from Object Pooler
-            GameObject shell = GameManager.manager.GetObjectFromPool();
-            shell.transform.position=barrel.position;
-            shell.transform.rotation=barrel.rotation;
-            shell.GetComponent<Rigidbody>().velocity=shell.transform.forward*bulletSpeed;
-            shell.GetComponent<Rigidbody>().angularVelocity=Vector3.zero;
-            shell.SetActive(true); 
+        //Get shell object from Object Pooler
+        GameObject shell = GameManager.manager.GetObjectFromPool();
+        shell.transform.position=barrel.position;
+        shell.transform.rotation=barrel.rotation;
+        shell.GetComponent<Rigidbody>().velocity=shell.transform.forward*bulletSpeed;
+        shell.GetComponent<Rigidbody>().angularVelocity=Vector3.zero; 
 
-            Destroy(flash,0.2f);
-            canShoot=false;
-            StartCoroutine(BeginCooldown());
-        }
+        Destroy(flash,0.2f);
+        canShoot=false;
+        shell.SetActive(true);
+        StartCoroutine(BeginCooldown());
     }
 
     float? CalculateAngle()
@@ -158,9 +153,7 @@ public class AIDrive : MonoBehaviour
             health-=25;
             healthBar.value=(float)health/100;
             if(health==0){
-                //Insert code for when out of health here
                 gameObject.SetActive(false);
-                //Insert code for when out of health here
                 return;
             }
 

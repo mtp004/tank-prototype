@@ -151,3 +151,5 @@ MonoBehaviour:
   speed: 45
   rb: {fileID: 0}
   explosion: {fileID: 195792, guid: 89e78efe92dfe5a42837b392cdb0bf9e, type: 3}
+  shellTransform: {fileID: 0}
+  hitTimes: 0

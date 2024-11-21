@@ -1,18 +1,3 @@
 CHANGES LOG, DATE: 11/16/2024
-Scripts changes:
-    - - - - - - - - - -
-    AIDrive.cs
-        Optimized component caching
-        Implemented a health system that disable tank after getting shot 4 times.
-    - - - - - - - - - -
-    Drive.cs:
-        Optimized component caching, might implement pooling for the explosion object later.
-        Implemented a health system that disable tank after getting shot 4 times.
-    - - - - - - - - - -
-    ObjectPooler.cs:
-        Moved pool initialization to the Awake call, also changed its implementation so the poolSize now depends on the number of users. Might implement explosion pooling later.
-    - - - - - - - - - -
-    Shell.cs:
-        Optimized component caching.
-    - - - - - - - - - -
-
+Known bugs: 
+    When stress testing the capabilities of the object pooling system, when there is a significant amount of shell collision in a short amount of times, shell sometimes register collision twice before they get disable, which is not how it is suppose to work, as the shell should get disable immediately after the first collision, leaving to chance for the collider to register another collision. The result is the shell calling ReleaseObject() twice in a very short duration, which leads to the poolIndex variable reaching -1 in the function, resulting in a IndexOutOfRangeException, this is a Unity limitation.

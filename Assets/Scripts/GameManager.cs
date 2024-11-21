@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private short poolSize;
+    private int poolSize;
     //drag the object to pool in the game menu to this slot
     public GameObject ObjectToPool;
     public static GameManager manager;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
         }
 
         //tag is hardcoded but i will change that later
-        poolSize=(short)(3*GetPooledObjectUserCount("Tank"));
-        poolIndex=1;
+        poolSize=3*GetPooledObjectUserCount("Tank");
+        poolIndex=0;
         InitializePool();
     }
 
@@ -45,32 +45,27 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetObjectFromPool(){
         GameObject gameObject=pools[poolIndex];
+        if(gameObject.activeInHierarchy==true) Debug.Log("Get is fucked");
         poolIndex++;
         return gameObject;
     }
 
     public void ReleaseObject(GameObject gameObject){
-        GameObject latestActive=pools[poolIndex-1];
-        poolIndex--;
-
-        //getting release and lastest active object index in pool by getting their component
-        PooledObject releaseComponent=gameObject.GetComponent<PooledObject>();
-        PooledObject activeComponent=latestActive.GetComponent<PooledObject>();
-        short releaseIndex=releaseComponent.PoolIndex;
-        short activeIndex=activeComponent.PoolIndex;
-
-        //swap their index component value before swapping them in the array
-        releaseComponent.PoolIndex=activeIndex;
-        activeComponent.PoolIndex=releaseIndex;
-
-        //switch their place in the pool
-        pools[activeIndex]=gameObject;
-        pools[releaseIndex]=latestActive;
-
+        if(gameObject.activeInHierarchy==false) Debug.Log("Release is fucked");
         gameObject.SetActive(false);
+        GameObject latestActive = pools[poolIndex - 1];
+
+        // Swapping logic here
+        var releaseComponent = gameObject.GetComponent<PooledObject>();
+        var activeComponent = latestActive.GetComponent<PooledObject>();
+        int releaseIndex = releaseComponent.PoolIndex;
+        int activeIndex = activeComponent.PoolIndex;
+
+        // Swap indices and update pool
+        releaseComponent.PoolIndex = activeIndex;
+        activeComponent.PoolIndex = releaseIndex;
+        pools[activeIndex] = gameObject;
+        pools[releaseIndex] = latestActive;
+        poolIndex--;
     }
-    
-    
-
-
 }
