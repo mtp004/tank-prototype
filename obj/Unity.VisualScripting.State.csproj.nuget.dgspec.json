@@ -1,0 +1,388 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.State.csproj": {}
+  },
+  "projects": {
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj",
+        "projectName": "Unity.VisualScripting.Core",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Flow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Flow.csproj",
+        "projectName": "Unity.VisualScripting.Flow",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Flow.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.State.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.State.csproj",
+        "projectName": "Unity.VisualScripting.State",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.State.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.TestRunner.csproj",
+        "projectName": "UnityEditor.TestRunner",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.TestRunner.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj",
+        "projectName": "UnityEditor.UI",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.UI.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEditor.TestRunner.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj"
+              },
+              "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj",
+        "projectName": "UnityEngine.TestRunner",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.TestRunner.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj",
+        "projectName": "UnityEngine.UI",
+        "projectPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/UnityEngine.UI.csproj",
+        "packagesPath": "/Users/tripham/.nuget/packages/",
+        "outputPath": "/Users/tripham/Desktop/Unity/AI Projects/AI Tank prototype/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tripham/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

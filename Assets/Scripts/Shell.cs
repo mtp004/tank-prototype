@@ -8,7 +8,7 @@ public class Shell : MonoBehaviour
     public Rigidbody rb;
     public GameObject explosion;
     public Transform shellTransform;
-    public int hitTimes;
+    public bool hitRegistered=false;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,18 +21,19 @@ public class Shell : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) 
     {
-        hitTimes++;
-        if(hitTimes==2) Debug.Log("Shell register hit two times");
-        GameManager.manager.ReleaseObject(gameObject);
-        GameObject shockwave=Instantiate(explosion, shellTransform.position, shellTransform.rotation);
-        Destroy(shockwave, 0.5f);
+        if(!hitRegistered){
+            hitRegistered=true;
+            gameObject.SetActive(false);
+            GameObject shockwave=Instantiate(explosion, shellTransform.position, shellTransform.rotation);
+            Destroy(shockwave, 0.5f);
+        } else Debug.Log("Hitted two times");
     }
     void Update()
     {
         shellTransform.forward=rb.velocity.normalized;
     }
 
-    void OnEnable(){
-        hitTimes=0;
+    void OnDisable(){
+        hitRegistered=false;
     }
 }

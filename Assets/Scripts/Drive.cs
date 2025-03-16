@@ -102,12 +102,14 @@ public class Drive : MonoBehaviour
     void RotateTurret()
     {
         Vector3 direction=pointer.transform.position-tankTransform.position;
+        direction.y=0;
         direction.y=direction.magnitude*Mathf.Tan(-turret.eulerAngles.x*Mathf.Deg2Rad);
         Quaternion lookRotation=Quaternion.LookRotation(direction);
         turret.rotation=Quaternion.RotateTowards(turret.transform.rotation, lookRotation, Time.deltaTime*turretRotateSpd);
 
         //vertically rotate the barrel
         float? angle=CalculateAngle();
+        Debug.Log(angle);
         if(angle!=null){
             turret.rotation=Quaternion.Euler(360-(float)angle,turret.eulerAngles.y,0);
         }

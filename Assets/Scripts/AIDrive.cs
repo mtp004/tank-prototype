@@ -41,7 +41,6 @@ public class AIDrive : MonoBehaviour
     }
 
     void Start(){
-        player=GameManager.manager.activePlayer; 
     }
 
     void Update()
@@ -105,7 +104,7 @@ public class AIDrive : MonoBehaviour
     {
         //rotate the turret horizontally
         Vector3 direction=player.transform.position-tankTransform.position;
-        direction.y=direction.magnitude*Mathf.Tan(-turret.eulerAngles.x*Mathf.Deg2Rad);
+        direction.y=direction.magnitude*Mathf.Tan((360-turret.eulerAngles.x)*Mathf.Deg2Rad);
         Quaternion lookRotation=Quaternion.LookRotation(direction);
         turret.rotation=Quaternion.RotateTowards(turret.rotation, lookRotation, turretRotateSpd*Time.deltaTime);
 
